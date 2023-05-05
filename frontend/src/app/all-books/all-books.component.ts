@@ -26,7 +26,7 @@ onDelete(id:any){
     this.bookservice.deletebook(id).subscribe(data=>{
       console.log(data);
       this.bookservice.refreshBookList();
-      //this.bookdata=this.bookdata.filter((u:any)=>u!==id)
+      this.bookdata=this.bookdata.filter((u:any)=>u!==id)
       //this.bookservice.refreshbookList();
     })
   }
