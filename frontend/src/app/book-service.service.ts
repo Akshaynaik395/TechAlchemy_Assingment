@@ -33,10 +33,10 @@ export class BookServiceService {
   deletebook(id:any){
     return this.http.delete('http://localhost:3000/books/'+`${id}`);
   }
-  refreshBookList(){
-    this.getBook().subscribe((res: Book)=>{
-      this.book=res as Book;
-    })
+
+  generateIsbn():number {
+    let randomNumber = Math.floor(Math.random() * 100000000000);
+    return randomNumber;
   }
   
 }

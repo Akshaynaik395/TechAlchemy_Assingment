@@ -12,8 +12,6 @@ export class AllBooksComponent implements OnInit{
   constructor(private bookservice:BookServiceService,private routes:Router){}
 ngOnInit(): void {
   this.loadbookdata();
-  this.bookservice.refreshBookList();
-  // this.bookservice.refreshbookList();
 }
 loadbookdata(){
   this.bookservice.allbook().subscribe((data:any)=>{
@@ -25,14 +23,8 @@ onDelete(id:any){
   if(confirm('Are you sure to delete this data...')==true){
     this.bookservice.deletebook(id).subscribe(data=>{
       console.log(data);
-      this.bookservice.refreshBookList();
-      this.bookdata=this.bookdata.filter((u:any)=>u!==id)
-      //this.bookservice.refreshbookList();
+      this.loadbookdata();
     })
   }
-  else{
-
-  }
-  
 }
 }
