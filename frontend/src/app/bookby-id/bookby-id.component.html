@@ -1,0 +1,19 @@
+<div class="container div2">
+<form>
+    <div class="form-group mt-4">
+        <label for="exampleInputID">Book ID</label>
+        <input type="text" class="form-control" id="exampleInputID" placeholder=" EnterBook ID" #bookId required>
+      </div>
+    <button type="submit"(click)="searchBook(bookId.value)" class="btn btn-primary mt-3">Search</button>
+</form>
+</div>
+<br>
+<br>
+<div *ngIf="book" class="container">
+  <p>  <b>Book Title:</b>   {{book.Book_Title}}</p>
+  <p> <b>Author:</b>  {{book.Author}}</p>
+  <p> <b>ISBN:</b>  {{book.ISBN}}</p>
+
+</div>
+
+

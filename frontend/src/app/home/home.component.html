@@ -1,0 +1,21 @@
+<br>
+<br>
+<div class="container div1">
+<form [formGroup]="addbook" novalidate class="for">
+  <h1 style="text-align: center; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;color: rgb(92, 97, 88);"><b>Book Entry</b></h1>
+    <div class="form-group mt-4">
+      <label for="exampleInputtitle">Book Title </label>
+      <input type="text" class="form-control" id="exampleInputtitle" placeholder="Enter Book Name" formControlName="Book_Title">
+    </div> 
+    <div class="form-group mt-4">
+      <label for="exampleInputAuthor">Book Author</label>
+      <input type="text" class="form-control" id="exampleInputAuthor" placeholder="Book Author" formControlName="Author">
+    </div>
+    <div class="form-group mt-4">
+        <label for="exampleInputISBN">ISBN Number</label>
+        
+        <input type="text" class="form-control" id="exampleInputISBN" placeholder="ISBN Number" formControlName="ISBN" [(ngModel)]="isbn">
+      </div>
+    <button type="submit" class="btn btn-primary mt-3"(click)="onsubmit()">Submit</button>
+  </form>
+</div>
